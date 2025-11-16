@@ -121,6 +121,51 @@
             border-radius: 3px;
             transition: width 1.5s ease;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover-effect {
+            transition: all 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+        }
+        .hidden-projects {
+            display: none;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
+
+
+
+
+
+
+
+
     </style>
 </head>
 <body class="min-h-screen">
@@ -172,7 +217,7 @@
                 <h1 class="text-4xl md:text-6xl font-bold mb-4">
                     <span class="gradient-text">Hello, I'm</span> <span class="typewriter">Riyad</span>
                 </h1>
-                <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-300">Specialized in <span class="gradient-text">Front-Edn & DataBase</span></h2>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-300">Specialized in <span class="gradient-text">Front-End & DataBase</span></h2>
                 <p class="text-lg text-gray-400 mb-8 max-w-lg">
                     I build exceptional digital experiences with modern technologies. Passionate about creating beautiful, functional, and user-friendly interfaces.
                 </p>
@@ -452,52 +497,59 @@
 </section>
 
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-                                    <h2 class="text-3xl font-bold mb-4">My <span class="gradient-text">Work</span></h2>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="projects" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">My <span class="gradient-text">Work</span></h2>
             <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mb-6"></div>
-            
             <p class="text-gray-400 max-w-2xl mx-auto">Some of my recent work</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project 1 -->
-                        <div class="project-card relative p-6 rounded-xl bg-gray-800/50 border border-gray-700 card-hover-effect">
-    <div class="absolute -z-10 -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
-    <div class="relative z-10">
-        <div class="w-full h-48 rounded-lg overflow-hidden mb-4">
-            <img src="e-commerce.png" alt="Project 1" class="w-full h-full object-cover">
-        </div>
-        <h3 class="text-xl font-bold mb-2">E-commerce website</h3>
-        <p class="text-gray-400 mb-4">A modern website for e-commerce businesses with analytics and inventory management as shopify</p>
-        <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">React</span>
-            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">HTML and CSS3</span>
-            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">SQL</span>
-        </div>
-        <div class="flex space-x-4">
-            <a href="#" class="text-indigo-400 hover:text-indigo-300 transition-colors" onclick="showNotHostedMessage()">
-                <i class="fas fa-external-link-alt"></i> Live
-            </a>
-        </div>
-    </div>
-</div>
-
-<script>
-function showNotHostedMessage() {
-    alert("This project is not currently hosted on the web.");
-    // Alternatively, you could use a more elegant notification system
-    // For example with Toastr, SweetAlert, or your own custom notification component
-}
-</script>
+            <!-- Project 1 - Industrial Cleaning Website -->
+            <div class="project-card relative p-6 rounded-xl bg-gray-800/50 border border-gray-700 card-hover-effect">
+                <div class="absolute -z-10 -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+                <div class="relative z-10">
+                    <div class="w-full h-48 rounded-lg overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Industrial Cleaning" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Industrial Cleaning & Car Wash</h3>
+                    <p class="text-gray-400 mb-4">A professional website for industrial cleaning and car wash services in Paris, featuring service information and contact forms.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">JavaScript</span>
+                        <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">HTML and CSS3</span>
+                        <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">React</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://gkmultiservice.com/" class="text-indigo-400 hover:text-indigo-300 transition-colors">
+                            <i class="fas fa-external-link-alt"></i> Live
+                        </a>
+                    </div>
+                </div>
+            </div>
             
             <!-- Project 2 -->
             <div class="project-card relative p-6 rounded-xl bg-gray-800/50 border border-gray-700 card-hover-effect">
                 <div class="relative z-10">
                     <div class="w-full h-48 rounded-lg overflow-hidden mb-4">
-                        <img src="sttropimg.png" alt="Project 2" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Beach Club" class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-xl font-bold mb-2">Beach Club website</h3>
                     <p class="text-gray-400 mb-4">Designed and developed a vibrant, user-friendly website for st.trop.beach, featuring seamless booking functionality, event, and immersive photo galleries</p>
@@ -507,7 +559,7 @@ function showNotHostedMessage() {
                         <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">HTML and CSS3</span>
                     </div>
                     <div class="flex space-x-4">
-                        <a href="https://maxou46.github.io/St_trop_oran.github.io/" class="text-indigo-400 hover:text-indigo-300 transition-colors">
+                        <a href="#" class="text-indigo-400 hover:text-indigo-300 transition-colors">
                             <i class="fas fa-external-link-alt"></i> Live
                         </a>
                     </div>
@@ -518,9 +570,9 @@ function showNotHostedMessage() {
             <div class="project-card relative p-6 rounded-xl bg-gray-800/50 border border-gray-700 card-hover-effect">
                 <div class="relative z-10">
                     <div class="w-full h-48 rounded-lg overflow-hidden mb-4">
-                        <img src="car-renting.png" alt="Project 3" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Car Renting" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-xl font-bold mb-2">renting car website</h3>
+                    <h3 class="text-xl font-bold mb-2">Renting Car Website</h3>
                     <p class="text-gray-400 mb-4">A productivity website which allow contact and renting a car from your own place with functionality and team collaboration features.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">JavaScript</span>
@@ -535,7 +587,118 @@ function showNotHostedMessage() {
                 </div>
             </div>
         </div>
+        
+        <!-- Hidden Projects Section -->
+        <div id="hidden-projects" class="hidden-projects mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 4 - E-commerce Website (Moved here) -->
+                <div class="project-card relative p-6 rounded-xl bg-gray-800/50 border border-gray-700 card-hover-effect">
+                    <div class="absolute -z-10 -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-full h-48 rounded-lg overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="E-commerce" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">E-commerce Website</h3>
+                        <p class="text-gray-400 mb-4">A modern website for e-commerce businesses with analytics and inventory management as shopify</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">React</span>
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">HTML and CSS3</span>
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">SQL</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 transition-colors" onclick="showNotHostedMessage()">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card relative p-6 rounded-xl bg-gray-800/50 border border-gray-700 card-hover-effect">
+                    <div class="relative z-10">
+                        <div class="w-full h-48 rounded-lg overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Analytics Dashboard" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Analytics Dashboard</h3>
+                        <p class="text-gray-400 mb-4">A comprehensive analytics dashboard with real-time data visualization and reporting features for business intelligence.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">React</span>
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">Chart.js</span>
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">Node.js</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 transition-colors">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card relative p-6 rounded-xl bg-gray-800/50 border border-gray-700 card-hover-effect">
+                    <div class="relative z-10">
+                        <div class="w-full h-48 rounded-lg overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mobile App" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Fitness Mobile App</h3>
+                        <p class="text-gray-400 mb-4">A cross-platform mobile application for fitness tracking with workout plans, progress monitoring, and social features.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">React Native</span>
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">Firebase</span>
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs">Redux</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 transition-colors">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- See More Button -->
+        <div class="text-center mt-12">
+            <button id="see-more-btn" class="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg font-medium hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1">
+                See More Projects
+            </button>
+        </div>
     </section>
+
+    <script>
+        function showNotHostedMessage() {
+            alert("This project is not currently hosted on the web.");
+        }
+        
+        document.getElementById('see-more-btn').addEventListener('click', function() {
+            const hiddenProjects = document.getElementById('hidden-projects');
+            const button = document.getElementById('see-more-btn');
+            
+            if (hiddenProjects.classList.contains('hidden-projects')) {
+                hiddenProjects.classList.remove('hidden-projects');
+                hiddenProjects.classList.add('fade-in');
+                button.textContent = 'See Less Projects';
+            } else {
+                hiddenProjects.classList.add('hidden-projects');
+                hiddenProjects.classList.remove('fade-in');
+                button.textContent = 'See More Projects';
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     <!-- Contact Section -->
     <section id="contact" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -612,11 +775,11 @@ function showNotHostedMessage() {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
                 <label for="name" class="block text-gray-300 mb-2">Your Name</label>
-                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all" placeholder="John Doe">
+                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all" placeholder="Riyad">
             </div>
             <div>
                 <label for="email" class="block text-gray-300 mb-2">Your Email</label>
-                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all" placeholder="john@example.com">
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all" placeholder="MyEmail@example.com">
             </div>
         </div>
         <div>
@@ -767,7 +930,3 @@ function showNotHostedMessage() {
 </html>
 </body>
 </html>
-
-
-
-
