@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery – Palma Sol</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><div class="logo-icon">PS</div><div><span class="logo-name">Palma Sol</span><span class="logo-sub">Resort & Spa</span></div></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="gallery.html" class="active">Gallery</a><a href="contact.html">Contact</a>
+      <a href="reservation.html" class="btn-nav">Book Now</a>
+    </div>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="reservation.html">Book Now</a>
+  </div>
+</nav>
+
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1400&q=80')">
+  <div class="hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="section-label gold">Visual Journey</div>
+    <h1 class="white">Our Gallery</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-cat="all">All</button>
+    <button class="filter-btn" data-cat="rooms">Rooms</button>
+    <button class="filter-btn" data-cat="pool">Pool</button>
+    <button class="filter-btn" data-cat="beach">Beach</button>
+    <button class="filter-btn" data-cat="spa">Spa</button>
+    <button class="filter-btn" data-cat="dining">Dining</button>
+    <button class="filter-btn" data-cat="resort">Resort</button>
+  </div>
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="g-item big" data-cat="pool" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80"/><div class="g-label">Infinity Pool</div><div class="g-zoom">🔍</div></div>
+    <div class="g-item" data-cat="rooms" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80"/><div class="g-label">Ocean Suite</div><div class="g-zoom">🔍</div></div>
+    <div class="g-item" data-cat="beach" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1540541338537-1220059d9e28?w=800&q=80"/><div class="g-label">Beach at Sunset</div><div class="g-zoom">🔍</div></div>
+    <div class="g-item" data-cat="resort" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80"/><div class="g-label">Resort Exterior</div><div class="g-zoom">🔍</div></div>
+    <div class="g-item" data-cat="rooms" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80"/><div class="g-label">Overwater Villa</div><div class="g-zoom">🔍</div></div>
+    <div class="g-item big" data-cat="rooms" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=800&q=80"/><div class="g-label">Palm Garden Villa</div><div class="g-zoom">🔍</div></div>
+    <div class="g-item" data-cat="resort" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800&q=80"/><div class="g-label">Tropical Gardens</div><div class="g-zoom">🔍</div></div>
+    <div class="g-item" data-cat="spa" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1546412414-e1885259563b?w=800&q=80"/><div class="g-label">Spa Treatment</div><div class="g-zoom">🔍</div></div>
+    <div class="g-item" data-cat="dining" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"/><div class="g-label">Fine Dining</div><div class="g-zoom">🔍</div></div>
+    <div class="g-item" data-cat="beach" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&q=80"/><div class="g-label">Beachfront View</div><div class="g-zoom">🔍</div></div>
+    <div class="g-item" data-cat="pool" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"/><div class="g-label">Pool at Night</div><div class="g-zoom">🔍</div></div>
+    <div class="g-item" data-cat="rooms" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80"/><div class="g-label">Coral Lagoon Room</div><div class="g-zoom">🔍</div></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt=""/>
+  <p id="lightboxLabel"></p>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="logo"><div class="logo-icon">PS</div><div><span class="logo-name">Palma Sol</span><span class="logo-sub">Resort & Spa</span></div></div><p>A paradise crafted for those who seek beauty and serenity.</p></div>
+    <div class="footer-col"><p class="footer-heading">Explore</p><a href="index.html">Home</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="reservation.html">Reservation</a></div>
+    <div class="footer-col"><p class="footer-heading">Visit Us</p><span>Palm Bay Island</span><span>Caribbean Sea</span><span>hello@palmasol.com</span></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Palma Sol Resort & Spa. All rights reserved.</p></div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

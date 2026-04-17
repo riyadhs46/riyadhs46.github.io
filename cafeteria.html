@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Palma Sol Resort & Spa</title>
+  <link rel="stylesheet" href="style3.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">PS</div>
+      <div>
+        <span class="logo-name">Palma Sol</span>
+        <span class="logo-sub">Resort & Spa</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="cafeteria.html" class="active">Home</a>
+      <a href="about2.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact2.html">Contact</a>
+      <a href="reservation2.html" class="btn-nav">Book Now</a>
+    </div>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="cafeteria.html">Home</a>
+    <a href="about2.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact2.html">Contact</a>
+    <a href="reservation2.html">Book Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-slides">
+    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1600&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">📍 Maldives • Caribbean • Bali</div>
+    <h1><span class="white">Palma</span> <span class="gold">Sol</span></h1>
+    <p class="hero-sub">Resort & Spa</p>
+    <p class="hero-desc">Where turquoise waters meet lush paradise. Escape to a world of pure bliss.</p>
+    <div class="hero-btns">
+      <a href="reservation2.html" class="btn-primary">Book Your Stay</a>
+      <a href="about2.html" class="btn-outline">Explore Resort</a>
+    </div>
+  </div>
+  <div class="slide-dots" id="dots">
+    <span class="dot active" onclick="goSlide(0)"></span>
+    <span class="dot" onclick="goSlide(1)"></span>
+    <span class="dot" onclick="goSlide(2)"></span>
+  </div>
+</section>
+
+<!-- QUICK BOOKING -->
+<section class="booking-bar-section">
+  <div class="booking-bar">
+    <div class="booking-field">
+      <label>Check In</label>
+      <input type="date"/>
+    </div>
+    <div class="divider"></div>
+    <div class="booking-field">
+      <label>Check Out</label>
+      <input type="date"/>
+    </div>
+    <div class="divider"></div>
+    <div class="booking-field">
+      <label>Guests</label>
+      <select>
+        <option>1 Guest</option>
+        <option>2 Guests</option>
+        <option>3 Guests</option>
+        <option>4+ Guests</option>
+      </select>
+    </div>
+    <a href="reservation2.html" class="btn-check">Check Availability</a>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="section amenities">
+  <div class="section-label">World-Class Amenities</div>
+  <h2>Everything You Dream Of</h2>
+  <div class="cards-4">
+    <div class="amenity-card">
+      <div class="amenity-icon">🌊</div>
+      <p>Infinity Pool</p>
+    </div>
+    <div class="amenity-card">
+      <div class="amenity-icon">☀️</div>
+      <p>Spa & Wellness</p>
+    </div>
+    <div class="amenity-card">
+      <div class="amenity-icon">🏄</div>
+      <p>Ocean Sports</p>
+    </div>
+    <div class="amenity-card">
+      <div class="amenity-icon">🍽️</div>
+      <p>Fine Dining</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section class="section rooms-section">
+  <div class="section-label">Our Accommodations</div>
+  <h2>Rooms & Villas</h2>
+  <div class="cards-3">
+    <div class="room-card">
+      <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80')">
+        <div class="room-price">From $320/night</div>
+      </div>
+      <div class="room-body">
+        <div class="stars">★★★★★</div>
+        <h3>Ocean Breeze Suite</h3>
+        <p>Panoramic ocean views, private balcony, king bed</p>
+        <a href="reservation2.html" class="link-arrow">Reserve Now →</a>
+      </div>
+    </div>
+    <div class="room-card">
+      <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=800&q=80')">
+        <div class="room-price">From $480/night</div>
+      </div>
+      <div class="room-body">
+        <div class="stars">★★★★★</div>
+        <h3>Palm Garden Villa</h3>
+        <p>Private plunge pool surrounded by tropical gardens</p>
+        <a href="reservation2.html" class="link-arrow">Reserve Now →</a>
+      </div>
+    </div>
+    <div class="room-card">
+      <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80')">
+        <div class="room-price">From $210/night</div>
+      </div>
+      <div class="room-body">
+        <div class="stars">★★★★</div>
+        <h3>Coral Lagoon Room</h3>
+        <p>Cozy retreat with lagoon access and sunrise views</p>
+        <a href="reservation2.html" class="link-arrow">Reserve Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials">
+  <div class="section-label">Guest Stories</div>
+  <h2>Pure Joy, Every Stay</h2>
+  <div class="cards-3">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"The most magical place I've ever stayed. Woke up every morning to the sound of waves."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div><strong>Sofia M.</strong><span>Italy</span></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Palma Sol exceeded every expectation. The staff made us feel like royalty."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">J</div>
+        <div><strong>James L.</strong><span>UK</span></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"The villa with the plunge pool was absolutely breathtaking. We'll be back!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div><strong>Amara K.</strong><span>Ghana</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-banner">
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <h3>Your paradise awaits</h3>
+      <p>Book now and get 15% off your first stay</p>
+      <a href="reservation2.html" class="btn-white">Book Now & Save</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-icon">PS</div><div><span class="logo-name">Palma Sol</span><span class="logo-sub">Resort & Spa</span></div></div>
+      <p>A paradise crafted for those who seek beauty, serenity, and unforgettable memories on the shores of the Caribbean.</p>
+      <span>📞 +1 (800) PALMA-SOL</span>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Explore</p>
+      <a href="cafeteria.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact2.html">Contact</a>
+      <a href="reservation2.html">Reservation</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Visit Us</p>
+      <span>Palm Bay Island</span>
+      <span>Caribbean Sea</span>
+      <span>hello@palmasol.com</span>
+      <span>Open 24/7</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Palma Sol Resort & Spa. All rights reserved.</p>
+    <p>Crafted with ♥ for paradise seekers</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

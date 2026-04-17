@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reservation – Palma Sol</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><div class="logo-icon">PS</div><div><span class="logo-name">Palma Sol</span><span class="logo-sub">Resort & Spa</span></div></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+      <a href="reservation.html" class="btn-nav active">Book Now</a>
+    </div>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="reservation.html">Book Now</a>
+  </div>
+</nav>
+
+<section class="res-page">
+  <div class="section-label" style="text-align:center">Palma Sol Resort</div>
+  <h1 style="text-align:center">Reserve Your Stay</h1>
+  <p class="text-muted" style="text-align:center;margin-bottom:32px">Begin your tropical escape — choose your perfect room</p>
+
+  <!-- Steps -->
+  <div class="steps" id="steps">
+    <div class="step active" id="step-0">1 Choose Room</div>
+    <div class="step-arrow">›</div>
+    <div class="step" id="step-1">2 Your Details</div>
+    <div class="step-arrow">›</div>
+    <div class="step" id="step-2">3 Confirm</div>
+  </div>
+
+  <!-- Step 0 -->
+  <div id="page0">
+    <div class="cards-3" style="margin-bottom:24px">
+      <div class="room-card selectable" data-id="ocean" data-price="320" onclick="selectRoom(this)">
+        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80')"></div>
+        <div class="room-body"><h3>Ocean Breeze Suite</h3><p class="orange">$320 / night</p><div class="tags"><span>King Bed</span><span>Ocean View</span><span>Balcony</span><span>Jacuzzi</span></div></div>
+      </div>
+      <div class="room-card selectable" data-id="palm" data-price="480" onclick="selectRoom(this)">
+        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=600&q=80')"></div>
+        <div class="room-body"><h3>Palm Garden Villa</h3><p class="orange">$480 / night</p><div class="tags"><span>2 King Beds</span><span>Private Pool</span><span>Butler</span><span>Garden</span></div></div>
+      </div>
+      <div class="room-card selectable" data-id="coral" data-price="210" onclick="selectRoom(this)">
+        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80')"></div>
+        <div class="room-body"><h3>Coral Lagoon Room</h3><p class="orange">$210 / night</p><div class="tags"><span>Queen Bed</span><span>Lagoon</span><span>Sunrise</span><span>Mini Bar</span></div></div>
+      </div>
+    </div>
+    <div class="form-card">
+      <h3>Choose Your Dates</h3>
+      <div class="form-row">
+        <div class="form-group"><label>Check In</label><input type="date" id="checkIn"/></div>
+        <div class="form-group"><label>Check Out</label><input type="date" id="checkOut"/></div>
+        <div class="form-group"><label>Guests</label><select id="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+      </div>
+    </div>
+    <div class="total-bar" id="totalBar" style="display:none">
+      <div><p class="text-muted">Estimated total for <span id="nightsLabel">1 night</span></p><p class="price-big" id="totalLabel">$0</p></div>
+      <button class="btn-primary" onclick="goStep(1)">Continue →</button>
+    </div>
+    <p class="text-muted" style="text-align:center" id="stepHint">Please select a room and dates to continue</p>
+  </div>
+
+  <!-- Step 1 -->
+  <div id="page1" style="display:none;max-width:520px;margin:0 auto">
+    <div class="form-card">
+      <h3>Your Details</h3>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" id="firstName" placeholder="John"/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" id="lastName" placeholder="Doe"/></div>
+      </div>
+      <div class="form-group"><label>Email</label><input type="email" id="email" placeholder="john@example.com"/></div>
+      <div class="form-group"><label>Phone</label><input type="tel" id="phone" placeholder="+1 234 567 8900"/></div>
+      <div class="form-group"><label>Special Requests</label><textarea rows="3" id="requests" placeholder="Any special requests..."></textarea></div>
+    </div>
+    <div class="step-btns">
+      <button class="btn-outline-dark" onclick="goStep(0)">← Back</button>
+      <button class="btn-primary" onclick="goStep(2)">Review Booking →</button>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div id="page2" style="display:none;max-width:520px;margin:0 auto">
+    <div class="form-card">
+      <h3>Booking Summary</h3>
+      <div class="summary-room" id="summaryRoom"></div>
+      <div class="summary-rows" id="summaryRows"></div>
+    </div>
+    <div class="step-btns">
+      <button class="btn-outline-dark" onclick="goStep(1)">← Back</button>
+      <button class="btn-primary" onclick="confirmBooking()">Confirm Booking ✓</button>
+    </div>
+  </div>
+
+  <!-- Confirmed -->
+  <div id="pageConfirmed" style="display:none;text-align:center;max-width:480px;margin:0 auto">
+    <div class="success-big">
+      <div class="success-icon big">✓</div>
+      <h2>Booking Confirmed!</h2>
+      <p class="text-muted">A confirmation has been sent to your email.</p>
+      <div class="form-card" style="margin:24px 0;text-align:left" id="confirmedDetails"></div>
+      <a href="index.html" class="btn-primary">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="logo"><div class="logo-icon">PS</div><div><span class="logo-name">Palma Sol</span><span class="logo-sub">Resort & Spa</span></div></div></div>
+    <div class="footer-col"><p class="footer-heading">Explore</p><a href="index.html">Home</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Palma Sol Resort & Spa. All rights reserved.</p></div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

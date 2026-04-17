@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUXDRIVE — Premium Car Rental</title>
+  <link rel="stylesheet" href="style2.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a class="nav-logo" href="#home">LUX<span>DRIVE</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#cars">Fleet</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#locations">Locations</a></li>
+      <li><a href="#booking" class="nav-cta">Book Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-pill">✦ Premium Fleet Available Now</div>
+        <h1>Drive Your <br/><span class="gradient-text">Dream Car</span><br/>Today.</h1>
+        <p>Luxury, sports & economy vehicles. Transparent pricing. Instant booking. Available in 12 cities.</p>
+        <div class="hero-actions">
+          <a href="#cars" class="btn btn-primary"><i class="fas fa-car"></i> Explore Fleet</a>
+          <a href="#booking" class="btn btn-ghost">Book Instantly →</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item"><strong>50K+</strong><span>Happy Drivers</span></div>
+          <div class="trust-divider"></div>
+          <div class="trust-item"><strong>200+</strong><span>Cars Available</span></div>
+          <div class="trust-divider"></div>
+          <div class="trust-item"><strong>12</strong><span>Cities</span></div>
+        </div>
+      </div>
+      <div class="hero-car-showcase">
+        <div class="car-glow"></div>
+        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&q=90" alt="Luxury Car" class="hero-car-img"/>
+        <div class="floating-card card-1">
+          <i class="fas fa-shield-alt"></i>
+          <div><strong>Full Insurance</strong><span>Included</span></div>
+        </div>
+        <div class="floating-card card-2">
+          <i class="fas fa-star"></i>
+          <div><strong>4.9 Rating</strong><span>2,400 reviews</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span class="scroll-text">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SEARCH BAR -->
+  <section class="search-section">
+    <div class="search-bar">
+      <div class="search-field">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <label>Pick-up Location</label>
+          <select>
+            <option>New York — JFK Airport</option>
+            <option>Los Angeles — LAX</option>
+            <option>Miami Downtown</option>
+            <option>Chicago O'Hare</option>
+            <option>Las Vegas Strip</option>
+          </select>
+        </div>
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <i class="fas fa-calendar"></i>
+        <div>
+          <label>Pick-up Date</label>
+          <input type="date" />
+        </div>
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <i class="fas fa-calendar-check"></i>
+        <div>
+          <label>Return Date</label>
+          <input type="date" />
+        </div>
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <i class="fas fa-car"></i>
+        <div>
+          <label>Car Type</label>
+          <select>
+            <option>Any Type</option>
+            <option>Economy</option>
+            <option>SUV</option>
+            <option>Luxury</option>
+            <option>Sports</option>
+          </select>
+        </div>
+      </div>
+      <button class="search-btn">Search <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!-- CAR LISTING -->
+  <section class="cars-section" id="cars">
+    <div class="section-header">
+      <p class="label">Our Fleet</p>
+      <h2>Choose Your Perfect Ride</h2>
+      <p class="sub">From daily commuters to weekend adventures — we've got the perfect car for every journey.</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Cars</button>
+      <button class="filter-btn" data-filter="economy">Economy</button>
+      <button class="filter-btn" data-filter="suv">SUV</button>
+      <button class="filter-btn" data-filter="luxury">Luxury</button>
+      <button class="filter-btn" data-filter="sports">Sports</button>
+    </div>
+
+    <div class="cars-grid" id="carsGrid"></div>
+  </section>
+
+  <!-- CAR DETAIL MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="carModal">
+      <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-header">
+      <p class="label">Transparent Pricing</p>
+      <h2>Simple, No-Surprise Plans</h2>
+      <p class="sub">All prices include insurance, roadside assistance & unlimited mileage.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-icon"><i class="fas fa-seedling"></i></div>
+        <h3>Economy</h3>
+        <div class="pricing-price"><sup>$</sup>29<sub>/day</sub></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check"></i> Compact & fuel-efficient cars</li>
+          <li><i class="fas fa-check"></i> Unlimited mileage</li>
+          <li><i class="fas fa-check"></i> Basic insurance</li>
+          <li><i class="fas fa-check"></i> 24/7 roadside support</li>
+          <li><i class="fas fa-check"></i> Free cancellation (48h)</li>
+          <li class="disabled"><i class="fas fa-times"></i> GPS Navigation</li>
+          <li class="disabled"><i class="fas fa-times"></i> Child seat</li>
+        </ul>
+        <a href="#booking" class="btn btn-outline-dark">Get Started</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-icon"><i class="fas fa-crown"></i></div>
+        <h3>Premium SUV</h3>
+        <div class="pricing-price"><sup>$</sup>79<sub>/day</sub></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check"></i> Full-size SUVs & crossovers</li>
+          <li><i class="fas fa-check"></i> Unlimited mileage</li>
+          <li><i class="fas fa-check"></i> Full coverage insurance</li>
+          <li><i class="fas fa-check"></i> 24/7 priority support</li>
+          <li><i class="fas fa-check"></i> Free cancellation (24h)</li>
+          <li><i class="fas fa-check"></i> GPS Navigation included</li>
+          <li><i class="fas fa-check"></i> Child seat available</li>
+        </ul>
+        <a href="#booking" class="btn btn-primary">Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-icon"><i class="fas fa-gem"></i></div>
+        <h3>Luxury</h3>
+        <div class="pricing-price"><sup>$</sup>149<sub>/day</sub></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check"></i> Ferrari, Porsche, Bentley</li>
+          <li><i class="fas fa-check"></i> Unlimited mileage</li>
+          <li><i class="fas fa-check"></i> Platinum insurance</li>
+          <li><i class="fas fa-check"></i> Personal concierge</li>
+          <li><i class="fas fa-check"></i> Free cancellation (12h)</li>
+          <li><i class="fas fa-check"></i> GPS + Premium audio</li>
+          <li><i class="fas fa-check"></i> Airport delivery</li>
+        </ul>
+        <a href="#booking" class="btn btn-outline-dark">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section class="locations-section" id="locations">
+    <div class="section-header">
+      <p class="label">Where We Operate</p>
+      <h2>Pick Up Anywhere</h2>
+      <p class="sub">12 premium locations across the United States, with more coming soon.</p>
+    </div>
+    <div class="locations-grid">
+      <div class="location-card" style="background-image:url('https://images.unsplash.com/photo-1499092346302-2b4be5ec0256?w=600&q=80')">
+        <div class="location-overlay"></div>
+        <div class="location-info">
+          <h3>New York</h3>
+          <p><i class="fas fa-map-marker-alt"></i> JFK · LaGuardia · Manhattan</p>
+          <span class="location-badge">42 Cars Available</span>
+        </div>
+      </div>
+      <div class="location-card" style="background-image:url('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80')">
+        <div class="location-overlay"></div>
+        <div class="location-info">
+          <h3>Los Angeles</h3>
+          <p><i class="fas fa-map-marker-alt"></i> LAX · Beverly Hills · Santa Monica</p>
+          <span class="location-badge">38 Cars Available</span>
+        </div>
+      </div>
+      <div class="location-card" style="background-image:url('https://images.unsplash.com/photo-1503891450247-ee5f8ec46dc3?w=600&q=80')">
+        <div class="location-overlay"></div>
+        <div class="location-info">
+          <h3>Miami</h3>
+          <p><i class="fas fa-map-marker-alt"></i> MIA Airport · South Beach · Brickell</p>
+          <span class="location-badge">29 Cars Available</span>
+        </div>
+      </div>
+      <div class="location-card" style="background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80')">
+        <div class="location-overlay"></div>
+        <div class="location-info">
+          <h3>Chicago</h3>
+          <p><i class="fas fa-map-marker-alt"></i> O'Hare · Midway · Downtown</p>
+          <span class="location-badge">25 Cars Available</span>
+        </div>
+      </div>
+      <div class="location-card" style="background-image:url('https://images.unsplash.com/photo-1605833556294-ea5c7a74f57d?w=600&q=80')">
+        <div class="location-overlay"></div>
+        <div class="location-info">
+          <h3>Las Vegas</h3>
+          <p><i class="fas fa-map-marker-alt"></i> The Strip · Harry Reid Airport</p>
+          <span class="location-badge">33 Cars Available</span>
+        </div>
+      </div>
+      <div class="location-card" style="background-image:url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=600&q=80')">
+        <div class="location-overlay"></div>
+        <div class="location-info">
+          <h3>San Francisco</h3>
+          <p><i class="fas fa-map-marker-alt"></i> SFO · Downtown · Oakland</p>
+          <span class="location-badge">21 Cars Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section class="booking-section" id="booking">
+    <div class="booking-wrapper">
+      <div class="booking-left">
+        <p class="label">Reserve Your Car</p>
+        <h2>Book in Under<br/><span class="gradient-text">2 Minutes</span></h2>
+        <p>Secure your vehicle instantly with our streamlined booking process. No hidden fees, no surprises.</p>
+        <div class="booking-perks">
+          <div class="perk"><i class="fas fa-lock"></i><span>Secure payment</span></div>
+          <div class="perk"><i class="fas fa-undo"></i><span>Free cancellation</span></div>
+          <div class="perk"><i class="fas fa-headset"></i><span>24/7 support</span></div>
+          <div class="perk"><i class="fas fa-tag"></i><span>Best price guarantee</span></div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80" alt="Car keys" class="booking-img"/>
+      </div>
+      <div class="booking-right">
+        <form class="booking-form" id="bookingForm">
+          <h3>Complete Your Booking</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="John" required/>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Doe" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="john@example.com" required/>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+1 (555) 000-0000" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Pick-up Location</label>
+              <select required>
+                <option value="">Select location</option>
+                <option>New York — JFK Airport</option>
+                <option>Los Angeles — LAX</option>
+                <option>Miami Downtown</option>
+                <option>Chicago O'Hare</option>
+                <option>Las Vegas Strip</option>
+                <option>San Francisco — SFO</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Car Type</label>
+              <select required>
+                <option value="">Select type</option>
+                <option>Economy</option>
+                <option>SUV</option>
+                <option>Luxury</option>
+                <option>Sports</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Pick-up Date</label>
+              <input type="date" required/>
+            </div>
+            <div class="form-group">
+              <label>Return Date</label>
+              <input type="date" required/>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label>Special Requests (optional)</label>
+            <textarea placeholder="Child seat, GPS, airport delivery..." rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-calendar-check"></i> Confirm Booking
+          </button>
+          <p class="booking-note">🔒 Your data is encrypted and 100% secure.</p>
+        </form>
+        <div class="booking-success" id="bookingSuccess">
+          <div class="success-icon">✓</div>
+          <h3>Booking Confirmed!</h3>
+          <p>We've sent a confirmation to your email. Our team will reach out within 30 minutes.</p>
+          <a href="#cars" class="btn btn-primary" style="margin-top:20px">Browse More Cars</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-section">
+    <div class="section-header">
+      <p class="label">Why LUXDRIVE</p>
+      <h2>The Better Way to Rent</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-bolt"></i></div>
+        <h4>Instant Booking</h4>
+        <p>Reserve your car in under 2 minutes. No waiting, no callbacks, just instant confirmation.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+        <h4>Full Insurance</h4>
+        <p>Every rental includes comprehensive insurance coverage. Drive with complete peace of mind.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-dollar-sign"></i></div>
+        <h4>No Hidden Fees</h4>
+        <p>The price you see is the price you pay. Zero surprises, zero add-ons you didn't ask for.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-road"></i></div>
+        <h4>Unlimited Miles</h4>
+        <p>Drive as far as you want. All our rentals come with truly unlimited mileage included.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>LUX<span>DRIVE</span></h3>
+        <p>Premium car rentals for every journey. Drive the car you deserve.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#cars">Car Fleet</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#booking">Book Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 LUXDRIVE. All rights reserved.</p>
+      <div class="payment-icons">
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-amex"></i>
+        <i class="fab fa-cc-paypal"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
